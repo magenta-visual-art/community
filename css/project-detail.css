@@ -1,0 +1,214 @@
+/* Project Detail Styles */
+/* Add these new styles at the top */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main {
+  flex: 1;
+} */
+
+footer {
+  margin-top: auto;
+}
+
+/* Modify the existing project-detail styles */
+.project-detail {
+  padding: 8rem 7% 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 7rem;
+  /* Remove min-height if it exists */
+}
+
+/* Keep the rest of your existing CSS */
+  
+  .project-detail h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    font-family: var(--font-title);
+  }
+  
+  .project-detail h2 span {
+    color: var(--primary);
+  }
+  
+  .project-description {
+    max-width: 1180px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+  }
+
+  .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    background: var(--bg-dark);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+/* Style untuk container yang memiliki sedikit item */
+.project-gallery:has(.gallery-item:only-child){
+  grid-template-columns: repeat(1,minmax(auto, 500px));
+  width: 100%;
+  place-items: center;
+}
+
+.project-gallery:has(.gallery-item:nth-child(2):last-child) {
+  grid-template-columns: repeat(2,minmax(auto, 400px));
+  width: 100%;
+  place-items: center;
+}
+
+/* Style untuk container yang memiliki 3-4 item */
+.project-gallery:has(.gallery-item:nth-child(3):last-child),
+.project-gallery:has(.gallery-item:nth-child(4):last-child) {
+  grid-template-columns: repeat(3, minmax(auto, 500px));
+  width: 100%;
+  place-items: center;
+}
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .project-detail {
+      padding: 8rem 4% 1.4rem;
+    }
+  
+    .project-gallery {
+      grid-template-columns: minmax(auto, 400px) !important;
+    }
+  
+    .gallery-item img {
+      height: 250px;
+    }
+
+    .gallery-item {
+      max-width: 400px;
+    }
+  }
+
+  /* Project Description Commission Section Styles */
+.commission-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.commission-section h3 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: var(--font-title);
+}
+
+.commission-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.commission-item {
+  flex: 1;
+  min-width: 250px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commission-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.commission-item h4 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-family: var(--font-title);
+}
+
+.commission-item p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* .commission-note {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  padding: 0 1rem;
+} */
+
+.project-description p {
+  margin-bottom: 2rem;
+}
+
+.project-description strong {
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.project-description em {
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .commission-options {
+    flex-direction: column;
+  }
+  
+  .commission-item {
+    min-width: 100%;
+  }
+  
+  .commission-section {
+    padding: 1.5rem;
+  }
+}

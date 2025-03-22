@@ -1,0 +1,363 @@
+/* Main Section Styles */
+.content-section {
+  padding: 8rem 9% 1.4rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--bg), var(--bg-dark));
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Section Title */
+.content-section h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+  font-family: var(--font-title);
+}
+
+.content-section h2 span {
+  color: var(--primary);
+}
+
+/* Intro Text */
+.intro-text {
+  text-align: center;
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.5rem;
+  background: rgba(249, 0, 133, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(249, 0, 133, 0.2);
+  box-shadow: 0 4px 15px rgba(249, 0, 133, 0.1);
+}
+
+/* Content Cards */
+.content-card {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 25px;
+  padding: 3rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(249, 0, 133, 0.1);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* Mengubah layout menjadi 2 kolom */
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Text Content */
+.text-content {
+  padding-right: 1.5rem;
+  order: 1; /* Memastikan teks selalu di kiri */
+}
+
+.text-content h3 {
+  color: var(--text);
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-title);
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(249, 0, 133, 0.1);
+  border-radius: 10px;
+}
+
+.text-content h4 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-subtitle);
+  font-style: italic;
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary);
+}
+
+.text-content p {
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 1.8rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+/* Lists */
+.text-content ul {
+  list-style: none;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: rgba(249, 0, 133, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(249, 0, 133, 0.1);
+}
+
+.text-content li {
+  color: var(--text);
+  margin-bottom: 1rem;
+  padding-left: 2.5rem;
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.text-content li:before {
+  content: '🔸';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(249, 0, 133, 0.2);
+  position: relative;
+  order: 2; /* Memastikan gambar selalu di kanan */
+}
+
+.image-container:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover Effects */
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(249, 0, 133, 0.2);
+  border-color: rgba(249, 0, 133, 0.3);
+}
+
+.content-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.content-card:hover .text-content h3 {
+  background: rgba(249, 0, 133, 0.2);
+}
+
+/* Conclusion Card */
+.conclusion {
+  text-align: center;
+  background: linear-gradient(145deg, rgba(249, 0, 133, 0.15), rgba(20, 20, 20, 0.95));
+  border: 2px solid var(--primary);
+  padding: 3rem;
+}
+
+.conclusion h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.conclusion p {
+  font-size: 1.5rem;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-card {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+/* Media Queries - Large Screen */
+@media (max-width: 1366px) {
+  .content-section {
+    padding: 8rem 7% 1.4rem;
+  }
+
+  .image-container {
+    height: 450px;
+  }
+  
+  .text-content h3 {
+    font-size: 2rem;
+  }
+  
+  .text-content h4 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Media Queries - Tablet */
+@media (max-width: 1024px) {
+  .content-section {
+    padding: 8rem 5% 1.4rem;
+  }
+
+  .content-container {
+    padding: 1rem;
+  }
+
+  .content-card {
+    grid-template-columns: 1fr; /* Mengubah menjadi 1 kolom */
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .text-content {
+    order: 1; /* Teks tetap di atas */
+    padding-right: 0;
+  }
+
+  .image-container {
+    order: 2; /* Gambar di bawah */
+    height: 350px;
+    margin-top: 1rem;
+  }
+
+  .text-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .text-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-content p,
+  .text-content li {
+    font-size: 1.1rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
+
+  .conclusion {
+    padding: 3rem 2rem;
+  }
+
+  .conclusion h3 {
+    font-size: 2rem;
+  }
+
+  .conclusion p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Media Queries - Mobile */
+@media (max-width: 450px) {
+  .content-section {
+    padding: 8rem 3% 1.4rem;
+  }
+
+  .content-card {
+    padding: 1.5rem;
+  }
+
+  .text-content {
+    padding: 0;
+  }
+
+  .image-container {
+    height: 250px;
+  }
+
+  .text-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .text-content h4 {
+    font-size: 1.1rem;
+  }
+
+  .text-content p,
+  .text-content li {
+    font-size: 1rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .conclusion {
+    padding: 2rem 1rem;
+  }
+
+  .conclusion h3 {
+    font-size: 1.6rem;
+  }
+
+  .conclusion p {
+    font-size: 1rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .content-card,
+  .image-container img {
+    transition: none;
+    animation: none;
+  }
+
+  .content-card:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .content-section {
+    background: none;
+    padding: 0;
+  }
+
+  .content-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .image-container {
+    break-inside: avoid;
+  }
+}

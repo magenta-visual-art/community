@@ -1,0 +1,165 @@
+/* Add these new styles at the top */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* main {
+  flex: 1;
+} */
+
+footer {
+  margin-top: auto;
+}
+
+/* Content Section Styles */
+.content-section {
+    padding-top: 8rem;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--bg), var(--bg-dark));
+  }
+  
+  .content-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--font-title);
+  }
+
+  h1 span{
+    color: var(--text);
+  }
+  
+  .intro {
+    text-align: center;
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.5rem;
+    background: rgba(249, 0, 133, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(249, 0, 133, 0.2);
+    box-shadow: 0 4px 15px rgba(249, 0, 133, 0.1);
+  }
+  
+  /* Facts Grid */
+  .facts-grid {
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 25px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(249, 0, 133, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  /* Fact Cards */
+  .fact-card {
+    background: var(--bg-dark);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(249, 0, 133, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(249, 0, 133, 0.2);
+  }
+  
+  .fact-card .number {
+    font-size: 4rem;
+    font-family: var(--font-title);
+    color: rgba(249, 0, 133, 0.1);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-weight: bold;
+  }
+  
+  .fact-card h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-family: var(--font-title);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .fact-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .facts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content-container {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    .facts-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .fact-card .number {
+      font-size: 3rem;
+    }
+  
+    .fact-card h3 {
+      font-size: 1.3rem;
+    }
+  
+    .fact-card p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .intro {
+      font-size: 1rem;
+    }
+  
+    .fact-card {
+      padding: 1.5rem;
+    }
+  
+    .fact-card .number {
+      font-size: 2.5rem;
+    }
+  }
