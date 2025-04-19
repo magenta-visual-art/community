@@ -299,7 +299,7 @@ section > p {
   display: flex;
   align-items: center;
   background-image: linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
-    url('../img/Home.png');
+    url('../img/Home.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
